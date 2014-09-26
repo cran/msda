@@ -36,6 +36,7 @@ formatoutput <- function(fit, maxit, pmax, nvars, vnames, nk) {
     ntheta <- fit$ntheta[seq(nalam)]
     nthetamax <- max(ntheta)
     lam <- fit$alam[seq(nalam)]
+	obj <- fit$obj[seq(nalam)]
     stepnames <- paste("s", seq(nalam) - 1, sep = "")
     resnames <- paste("delta", seq(nk), sep = "")
     
@@ -66,7 +67,7 @@ formatoutput <- function(fit, maxit, pmax, nvars, vnames, nk) {
         }
         df <- rep(0, nalam)
     }
-    list(theta = theta, df = df, dim = dd, lambda = lam)
+    list(theta = theta, df = df, dim = dd, lambda = lam, obj = obj)
 }
 
 
@@ -115,11 +116,15 @@ err <- function(n, maxit, pmax) {
         # non fatal error
         if (n > -10000) 
             msg <- paste("Convergence for ", -n, "th lambda value not reached after maxit=", 
-                maxit, " iterations; solutions for larger lambdas returned", 
+                maxit, " iterations; solutions for larger lambdas returned.\n", 
                 sep = "")
         if (n < -10000) 
             msg <- paste("Number of nonzero coefficients along the path exceeds pmax=", 
-                pmax, " at ", -n - 10000, "th lambda value; solutions for larger lambdas returned", 
+                pmax, " at ", -n - 10000, "th lambda value; solutions for larger lambdas returned.\n", 
+                sep = "")
+        if (n < -20000) 
+            msg <- paste("Number of nonzero coefficients along the path exceeds dfmax=", 
+                pmax, " at ", -n - 20000, "th lambda value; solutions for larger lambdas returned.\n", 
                 sep = "")
         n <- -1
     }

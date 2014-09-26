@@ -1,7 +1,7 @@
 # the main function
 msda <- function(x, y, nlambda = 100, lambda.factor = ifelse((nobs - nclass) <= 
-    nvars, 0.05, 1e-04), lambda = NULL, dfmax = nobs, pmax = min(dfmax * 
-    1.2, nvars), pf = rep(1, nvars), eps = 1e-04, maxit = 1e+06, sml = 1e-06, 
+    nvars, 0.2, 1e-03), lambda = NULL, dfmax = nobs, pmax = min(dfmax * 
+    2 + 20, nvars), pf = rep(1, nvars), eps = 1e-04, maxit = 1e+06, sml = 1e-06, 
     verbose = FALSE, perturb = NULL) {
     ## data setup
     this.call <- match.call()
@@ -45,7 +45,7 @@ msda <- function(x, y, nlambda = 100, lambda.factor = ifelse((nobs - nclass) <=
         nlam <- as.integer(length(lambda))
     }
     ## call Fortran core
-    fit <- .Fortran("msda", nk, nvars, as.double(sigma), as.double(delta), 
+    fit <- .Fortran("msda", obj = double(nlam), nk, nvars, as.double(sigma), as.double(delta), 
         pf, dfmax, pmax, nlam, flmin, ulam, eps, maxit, sml, verbose, nalam = integer(1), 
         theta = double(pmax * nk * nlam), itheta = integer(pmax), ntheta = integer(nlam), 
         alam = double(nlam), npass = integer(1), jerr = integer(1))
