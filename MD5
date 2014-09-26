@@ -1,0 +1,14 @@
+94d55d512a9ba36caa9b7df079bae19f *COPYING
+422b060e440fdad79fc0883d6dd56ea1 *ChangeLog
+acb94d3ed51721eb55cccc57c7f3672d *DESCRIPTION
+9860c2a3bae9b1d5ee50edcc6b80d793 *NAMESPACE
+d5160bba708142fb51e6bd91fa1848c9 *R/cv.msda.R
+1e40b9b18ec65a15a554ab9b0a0afb05 *R/msda.R
+81080252bb63b08aef8f4135306152ab *R/predict.msda.R
+61a218dc33fdbfb91763f3c36068a39e *R/utilities.R
+507d6ed253c357c466093aae6be28edb *data/GDS1615.rda
+2512a34cc01ebb0d15cc0257481d8372 *man/GDS1615.Rd
+1188eb03e1df9453a873ad9bea77f401 *man/cv.msda.Rd
+b0c04ab7b07a4403f790d68bd90aa5bf *man/msda.Rd
+5dbc30d4381d88a1bc4d90e134684546 *man/predict.msda.Rd
+37d24f10ebe803bec83a13fdbdc3faab *src/msda_new.f90

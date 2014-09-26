@@ -1,0 +1,9 @@
+useDynLib("msda")
+
+import("Matrix", "MASS")
+
+export(msda, cv.msda)
+
+S3method("predict","msda")
+
+
