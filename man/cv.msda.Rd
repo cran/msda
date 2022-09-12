@@ -54,8 +54,8 @@ URL: \url{https://github.com/emeryyi/msda}\cr
 }
 
 \author{
-Qing Mai <mai@stat.fsu.edu>, Yi Yang <yiyang@umn.edu>,  Hui Zou <hzou@stat.umn.edu>\cr
-Maintainer: Yi Yang  <yiyang@umn.edu>}
+Qing Mai <mai@stat.fsu.edu>, Yi Yang <yi.yang6@mcgill.ca>,  Hui Zou <hzou@stat.umn.edu>\cr
+Maintainer: Yi Yang  <yi.yang6@mcgill.ca>}
 
 \seealso{
 \code{\link{msda}}}

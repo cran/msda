@@ -8,3 +8,7 @@ S3method("predict","msda")
 
 S3method("plot","msda")
 
+importFrom("grDevices", "rainbow")
+importFrom("graphics", "axis", "matplot", "par")
+importFrom("methods", "new")
+importFrom("stats", "approx", "cov", "predict", "sd")
