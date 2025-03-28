@@ -4,7 +4,7 @@ kktchk <- function(obj, pf, thr) {
     nk <- nrow(obj$delta)
     nvars <- ncol(obj$sigma)
     for (l in 1:length(lambda)) {
-        cat("now checking lambda ", l, "\n")
+        message("now checking lambda ", l, "\n")
         theta <- t(obj$theta[[l]])
         thetaInner <- apply(theta, 2, crossprod)
         thetaNorm <- sqrt(thetaInner)
@@ -20,11 +20,11 @@ kktchk <- function(obj, pf, thr) {
                 dif_norm <- sqrt(crossprod(thetaDif[, j]))
                 tmp <- dif_norm - los
                 if (tmp > 0) 
-                  cat("violated at t > 0", tmp, "\n")
+                  message("violated at t > 0", tmp, "\n")
             } else {
                 tmp3 <- thetaDif[, j] + los * theta[, j]/thetaNorm[j]
                 if (any(abs(tmp3) > thr)) 
-                  cat("violated at t = 0", tmp3, "\n")
+                  message("violated at t = 0", tmp3, "\n")
             }
         }
     }
@@ -41,7 +41,7 @@ formatoutput <- function(fit, maxit, pmax, nvars, vnames, nk) {
     resnames <- paste("delta", seq(nk), sep = "")
     
     errmsg <- err(fit$jerr, maxit, pmax)  ### error messages from fortran
-    switch(paste(errmsg$n), `1` = stop(errmsg$msg, call. = FALSE), `-1` = cat(errmsg$msg))
+    switch(paste(errmsg$n), `1` = stop(errmsg$msg, call. = FALSE), `-1` = message(errmsg$msg))
     
     dd <- c(nvars, nk)
     df <- rep(0, nalam)

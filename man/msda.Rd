@@ -45,7 +45,7 @@ verbose = FALSE, perturb = NULL)
   \item{maxit}{
 maximum number of outer-loop iterations allowed at fixed lambda value. Default is 1e6. If models do not converge, consider increasing \code{maxit}.}
   \item{sml}{
-%%     ~~Describe \code{sml} here~~
+threshold for testing the convergence of the objective function.
 }
   \item{verbose}{
 whether to print out computation progress. The default is \code{FALSE}. }
@@ -80,7 +80,7 @@ An object with S3 class \code{\link{msda}}.
 
 Mai, Q.*, Yang, Y.*, and Zou, H. (2014), "Multiclass Sparse Discriminant Analysis." Submitted to \emph{Journal of the American Statistical Association}. (* co-first author)
 
-URL: \url{https://github.com/emeryyi/msda}\cr
+URL: \url{https://github.com/archer-yang-lab/msda}\cr
 }
 \author{
 Qing Mai <mai@stat.fsu.edu>, Yi Yang <yi.yang6@mcgill.ca>,  Hui Zou <hzou@stat.umn.edu>\cr

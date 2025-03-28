@@ -15,6 +15,8 @@ plot.msda <- function(x, xvar = c("norm", "lambda"), ...) {
 	nlam <- length(x$lambda)
 	ind <- matrix(NA, nlam, theta_ncol)
 	tmp <- do.call(cbind,lapply(x$theta,matrix,nrow=theta_nrow,byrow=FALSE))
+    oldpar <- par(no.readonly = TRUE)
+    on.exit(par(oldpar))  # Ensure restoration on exit
 	par(mfrow = c(1,theta_ncol))
 	for(i in seq(theta_ncol)){
 		ind <- seq(i,theta_ncol * nlam,by = theta_ncol)

@@ -50,7 +50,7 @@ list with the ingredients of the cross-validation fit.
 
 Mai, Q.*, Yang, Y.*, and Zou, H. (2014), "Multiclass Sparse Discriminant Analysis." Submitted to \emph{Journal of the American Statistical Association}. (* co-first author)
 
-URL: \url{https://github.com/emeryyi/msda}\cr
+URL: \url{https://github.com/archer-yang-lab/msda}\cr
 }
 
 \author{
